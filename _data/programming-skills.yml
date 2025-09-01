@@ -1,0 +1,19 @@
+- name: R
+  percentage: 80
+  color: danger
+
+- name: Nextflow
+  percentage: 60
+  color: warning
+
+- name: Python
+  percentage: 50
+  color: 
+
+- name: Bash
+  percentage: 50
+  color: secondary
+
+- name: mySQL
+  percentage: 40
+  color: success
