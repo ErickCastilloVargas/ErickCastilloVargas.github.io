@@ -2,12 +2,12 @@
 title: XVII Genetics Conference
 tags: [Oral communication]
 style: fill
-color: secondary
+color: light
 comments: true
 description: Study of the effects of point mutations in the *Tardbp* gene of mice and their relationship with motor neuron degeneration.
 ---
 
-## Abstract
+## Study of the effects of point mutations in the *Tardbp* gene of mice and their relationship with motor neuron degeneration
 
 TDP-43 (encoded by the TARDBP gene) is an RNA-binding protein critical for the splicing of numerous transcripts and represents a central player in the pathogenesis of amyotrophic lateral sclerosis (ALS). A gain-of-function in TDP-43, which causes widespread splicing dysregulation, has been proposed as one of the triggering mechanisms of ALS. To investigate this further and to determine whether there is a relationship between splicing gain-of-function and motor neuron degeneration, we used two unique knock-in mouse models carrying point mutations in the endogenous Tardbp gene: Tardbp<sup>Q331K</sup> and Tardbp<sup>M323K</sup>.
 

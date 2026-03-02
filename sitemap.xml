@@ -1,0 +1,35 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in site.pages %}
+    {% if page.url and page.url != "/404.html" %}
+  <url>
+    <loc>{{ page.url | absolute_url }}</loc>
+    {% if page.last_modified_at %}<lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>{% endif %}
+  </url>
+    {% endif %}
+  {% endfor %}
+
+  {% for post in site.posts %}
+  <url>
+    <loc>{{ post.url | absolute_url }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+  </url>
+  {% endfor %}
+
+  {% for project in site.projects %}
+  <url>
+    <loc>{{ project.url | absolute_url }}</loc>
+    {% if project.date %}<lastmod>{{ project.date | date_to_xmlschema }}</lastmod>{% endif %}
+  </url>
+  {% endfor %}
+
+  {% for publication in site.publications %}
+  <url>
+    <loc>{{ publication.url | absolute_url }}</loc>
+    {% if publication.date %}<lastmod>{{ publication.date | date_to_xmlschema }}</lastmod>{% endif %}
+  </url>
+  {% endfor %}
+</urlset>

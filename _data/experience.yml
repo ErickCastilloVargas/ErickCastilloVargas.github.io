@@ -1,23 +1,23 @@
-- title: Bioinformatics Research Assistant, Spain
-  university: Universidad de La Laguna
-  from: SEP 2019
-  to: present
-  description: Genomic data analysis (RNA-seq and microarray) of asthma patients and controls. The work is being carried out using Bash and R programming language to build pipelines that enable data processing, including quality control, normalization, and bias correction, and differential gene expression analysis, stratified by sex, to identify specific biomarkers related to asthma.
+- title: Bioinformatics Research Assistant
+  university: Universidad de La Laguna, Spain
+  from: SEP 2024
+  to: JUL 2025
+  description: Genomic data analysis of asthma patients and controls using RNA-seq and microarray data. Custom pipelines were developed in Bash and R to perform end-to-end data processing, including quality control, normalization, bias correction, and sex-stratified differential gene expression analysis to identify asthma-associated biomarkers. Separately, I worked on the processing and analysis of raw respiratory microbiome data, as well as blood epigenome data, using R to conduct microbiome epigenome-wide association studies to identify associations between microbiome features and epigenetic markers in asthma.
 
-- title: Research Intern (Master's Thesis), Spain
-  university: Instituto de Neurociencias de Castilla y León
+- title: Research Intern (Master's Thesis)
+  university: Instituto de Neurociencias de Castilla y León, Spain
   from: NOV 2023
   to: JUL 2024
   description: Molecular analysis of neuronal development using confocal microscopy, RT-qPCR techniques, and advanced image analysis tools. This work includes image acquisition (Leica LAS X) and processing (using ZEISS Arivis Pro) for brain tissue studies, generation and handling of primary neuronal cultures, molecular assays (PCR, RT-qPCR) and immunofluorescence techniques for biomarker identification.
 
-- title: Research Intern (Bachelor's Thesis), Spain
-  university: Hospital Universitario de Canarias
+- title: Research Intern (Bachelor's Thesis)
+  university: Hospital Universitario de Canarias, Spain
   from: APR 2023
   to: JUL 2023
   description: I conducted research using techniques such as Western blot and RT-PCR to assess TDP-43 protein dysfunction, and employed cryostat sectioning and Nissl staining to analyze neuronal morphology.
 
-- title: Research Assistant (Intern) 
-  university: Instituto de Tecnologías Biomédicas
+- title: Research Assistant (Intern)
+  university: Instituto de Tecnologías Biomédicas, Spain
   from: FEB 2023
   to: APR 2023
   description: Gained experience in advanced genetic editing using CRISPR/Cas9 in mouse cells and embryos, as well as in the generation and handling of HEK293 cell cultures.

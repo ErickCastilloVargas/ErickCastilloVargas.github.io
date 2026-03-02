@@ -1,0 +1,19 @@
+- name: RT-qPCR
+  percentage: 90
+  color: danger
+
+- name: Confocal microscopy
+  percentage: 70
+  color: warning
+
+- name: Cell culture management
+  percentage: 50
+  color:
+
+- name: Cryostat sectioning
+  percentage: 50
+  color: secondary
+
+- name: CRISPR/Cas9 editing
+  percentage: 40
+  color: success

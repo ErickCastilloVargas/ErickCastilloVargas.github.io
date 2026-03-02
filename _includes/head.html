@@ -1,0 +1,69 @@
+<head>
+  {%- assign page_title = page.title | default: site.title -%}
+  {%- if page_title != site.title -%}
+    {%- assign page_title = page_title | append: " | " | append: site.title -%}
+  {%- endif -%}
+  {%- assign page_description = page.description | default: site.description -%}
+  {%- assign page_url = page.url | absolute_url -%}
+  {%- assign page_image = site.author.image | absolute_url -%}
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_description }}">
+  <meta name="author" content="{{ site.author.name }}">
+  <link rel="canonical" href="{{ page_url }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:url" content="{{ page_url }}">
+  <meta property="og:image" content="{{ page_image }}">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title }}">
+  <meta name="twitter:description" content="{{ page_description }}">
+  <meta name="twitter:image" content="{{ page_image }}">
+
+  {%- if page.url == "/" or page.permalink == "/" -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "alternateName": [{% for n in site.author.alternate_names %}{% if forloop.index0 > 0 %}, {% endif %}"{{ n }}"{% endfor %}],
+    "url": "{{ site.url }}",
+    "image": "{{ page_image }}",
+    "email": "mailto:{{ site.author.email }}",
+    "sameAs": [
+      {%- assign same_as = "" -%}
+      {%- if site.author.github -%}{%- assign same_as = same_as | append: "https://www.github.com/" | append: site.author.github -%}{%- endif -%}
+      {%- if site.author.linkedin -%}{%- if same_as != "" -%}{%- assign same_as = same_as | append: "," -%}{%- endif -%}{%- assign same_as = same_as | append: "https://www.linkedin.com/in/" | append: site.author.linkedin -%}{%- endif -%}
+      {%- if site.author.orcid -%}{%- if same_as != "" -%}{%- assign same_as = same_as | append: "," -%}{%- endif -%}{%- assign same_as = same_as | append: "https://orcid.org/" | append: site.author.orcid -%}{%- endif -%}
+      {%- assign same_as_list = same_as | split: "," -%}
+      {%- for url in same_as_list -%}{% if forloop.index0 > 0 %}, {% endif %}"{{ url }}"{%- endfor -%}
+    ]
+  }
+  </script>
+  {%- endif -%}
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+
+  <!-- Theme style -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>

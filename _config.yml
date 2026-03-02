@@ -1,7 +1,8 @@
 ### Site Settings ###
 title               : Erick Castillo
 description         : >-
-                      Half biologist, half coder, fully confused (but making progress) 
+                      Bioinformatics and genomics researcher focused on computational analysis of omics data.
+url                 : "https://erickcastillo.page"
 baseurl             : ""           
 repository          : ErickCastilloVargas/ErickCastilloVargas.github.io
 remote_theme        : yousinix/portfolYOU
@@ -22,7 +23,11 @@ nav_exclude:
 
 ### Author Info ###
 author:
-  name              : Erick Castillo
+  name              : Erick Marcos Castillo Vargas
+  short_name        : Erick Castillo
+  alternate_names:
+    - Erick Castillo
+    - Erick Marcos Castillo Vargas
   image             : img/me.png
   email             : erickmarcoscastillovargas@gmail.com
   github            : ErickCastilloVargas
