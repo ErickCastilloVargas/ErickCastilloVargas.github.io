@@ -5,6 +5,12 @@ permalink: /resume/
 weight: 4
 ---
 
+<p class="mt-3 text-center">
+  <a class="btn btn-outline-primary" href="{{ '/assets/files/cv.pdf' | relative_url }}" download>
+    Download CV
+  </a>
+</p>
+
 # **About Me**
 
 Hi, I am **{{ site.author.name }}** :wave:,<br>
