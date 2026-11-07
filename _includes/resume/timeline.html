@@ -1,0 +1,10 @@
+<ol class="resume-timeline">
+  {%- for item in include.source %}
+  <li class="resume-timeline__item">
+    <span class="resume-date">{{ item.from }} — {{ item.to }}</span>
+    <h3 class="resume-card__title">{{ item.title }}</h3>
+    <p class="resume-card__org"><i class="fas fa-university"></i> {{ item.university }}</p>
+    <p class="resume-timeline__text">{{ item.description }}</p>
+  </li>
+  {%- endfor %}
+</ol>

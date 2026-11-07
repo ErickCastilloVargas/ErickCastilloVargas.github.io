@@ -1,16 +1,72 @@
-.publication.card {
-  border-radius: $rounded-borders;
-  text-decoration: none !important;
-  margin: 10px auto;
+// Publications page
 
-  .card-img-top {
-    border-radius: $rounded-borders $rounded-borders 0 0;
+.publication-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.publication-card {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    background: linear-gradient(var(--l-accent), var(--l-accent-2));
   }
 
-  transition: transform 400ms;
+  .listing-card__body {
+    padding: 1.4rem 1.6rem 1.4rem 1.85rem;
+  }
 
-  &:hover:not(.post) {
-    transform: translateY(-8px);
-    box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+  &__title {
+    font-size: 1.2rem;
+
+    a {
+      color: var(--l-text);
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: var(--l-accent);
+      }
+    }
+  }
+
+  &__status {
+    border-color: transparent;
+    background: var(--l-gold-soft);
+    color: var(--l-gold);
+  }
+
+  &__authors {
+    margin: 0.45rem 0 0;
+    font-size: 0.9rem;
+  }
+
+  &__journal {
+    margin: 0.15rem 0 0;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--l-muted);
+  }
+
+  &__doi {
+    font-family: SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.8rem;
+    color: var(--l-muted);
+    word-break: break-all;
+  }
+
+  &__btn {
+    margin-left: auto;
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem;
+
+    i {
+      font-size: 0.75rem;
+    }
   }
 }

@@ -1,0 +1,14 @@
+<div class="resume-skills">
+  <p class="resume-sidebar__heading"><i class="{{ include.icon }}"></i> {{ include.title }}</p>
+  {%- for skill in include.source %}
+  <div class="resume-skill">
+    <div class="resume-skill__label">
+      <span>{{ skill.name }}</span>
+      <span class="resume-skill__value">{{ skill.percentage }}%</span>
+    </div>
+    <div class="resume-skill__track" role="progressbar" aria-label="{{ skill.name }}" aria-valuenow="{{ skill.percentage }}" aria-valuemin="0" aria-valuemax="100">
+      <span class="resume-skill__fill" style="width: {{ skill.percentage }}%"></span>
+    </div>
+  </div>
+  {%- endfor %}
+</div>

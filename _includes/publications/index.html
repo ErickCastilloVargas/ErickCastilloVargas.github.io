@@ -1,59 +1,28 @@
+{%- assign publications = site.publications | sort: "date" | reverse -%}
+{%- assign years = publications | group_by_exp: "publication", "publication.date | date: '%Y'" -%}
 
-<div class="card-columns m-3 mt-5">
+{% for year in years %}
+<section class="listing-year wow animated fadeIn" data-wow-delay=".1s" aria-labelledby="year-{{ year.name }}">
+  <h2 class="listing-year__title" id="year-{{ year.name }}">{{ year.name }} <span class="listing-year__count">{{ year.items | size }}</span></h2>
 
-  <!-- Remote Projects -->
-  {% for remote_publication in page.remote_publications %}
-
-    {%- for repo in site.github.public_repositories -%}
-
-      {%- if remote_publication == repo.name -%}
-
-        {%- assign publication = repo -%}
-        {%- assign words = publication.name | split: '-' -%}
-        
-        {%- capture titlecase -%}
-          {%- for word in words -%}
-            {{ word | capitalize | append: ' ' }}
-          {%- endfor -%}
-        {%- endcapture -%}
-
-        {%- assign publication_type  = "remote" -%}
-        {%- assign publication_id    = publication.name -%}
-        {%- assign publication_img   = false -%}
-        {%- assign publication_name  = titlecase | strip -%}
-        {%- assign publication_desc  = publication.description -%}
-        {%- assign publication_url   = publication.html_url -%}
-        {%- assign publication_tools = publication.topics -%}
-        {%- assign external      = true -%}
-
-        {% include publications/publication-card.html %}
-
-      {%- endif -%}
-
-    {%- endfor -%}
-
-  {% endfor %}
-
-  <!-- Local Projects -->
-  {% for publication in site.publications %}
-
-    {%- assign publication_type  = "local" -%}
-    {%- assign publication_id    = publication.name | slugify -%}
-    {%- assign publication_img   = publication.image -%}
-    {%- assign publication_name  = publication.name -%}
-    {%- assign publication_desc  = publication.description -%}
-    {%- assign publication_tools = publication.tools -%}
+  <div class="publication-list">
+    {%- for publication in year.items %}
 
     {%- if publication.external_url -%}
       {%- assign publication_url = publication.external_url -%}
-      {%- assign external    = true -%}
+      {%- assign external        = true -%}
     {%- else -%}
       {%- assign publication_url = publication.url | relative_url -%}
-      {%- assign external    = false -%}
+      {%- assign external        = false -%}
     {%- endif -%}
 
     {% include publications/publication-card.html %}
-
-  {% endfor %}
-
+    {%- endfor %}
+  </div>
+</section>
+{% else %}
+<div class="listing-empty">
+  <i class="far fa-file-alt"></i>
+  Publications coming soon.
 </div>
+{% endfor %}

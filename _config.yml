@@ -2,10 +2,9 @@
 title               : Erick Castillo
 description         : >-
                       Bioinformatics and genomics researcher focused on computational analysis of omics data.
-url                 : "https://erickcastillo.page"
+url                 : "https://erickcastillovargas.github.io"
 baseurl             : ""
 repository          : ErickCastilloVargas/ErickCastilloVargas.github.io
-remote_theme        : yousinix/portfolYOU
 open_new_tab        : false
 
 
@@ -36,6 +35,7 @@ author:
 # kaggle            : your_username
   linkedin          : erick-marcos-castillo-vargas-68318a221
   orcid             : 0009-0009-7152-9116
+  research_gate     : Erick-Castillo-Vargas-2
 # stackoverflow     : your_user_id
 # twitter           : your_username
 # youtube           : your_channel_name
@@ -101,4 +101,6 @@ exclude:
   - README.md
   - CONTRIBUTING.md
   - LICENSE
+  - LICENSE-portfolYOU
+  - cv
   - "*.log"

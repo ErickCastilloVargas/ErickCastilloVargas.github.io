@@ -1,25 +1,80 @@
-<!-- Simple-Jekyll-Search https://github.com/christian-fei/Simple-Jekyll-Search -->
+<!-- Collect tags from all posts -->
+{%- assign tags = blank -%}
+{%- for post in site.posts -%}
+  {%- assign post_tags = post.tags | join:'|' | append:'|' -%}
+  {%- if post_tags != '|' -%}
+    {%- assign tags = tags | append:post_tags -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign all_tags = tags | split:'|' -%}
+{%- assign tags = all_tags | uniq | sort -%}
 
-<div class="input-group mt-5 px-3">
-  <input id="search-input" type="text" class="form-control search-box" placeholder="Search posts..">
-  <div class="input-group-append">
-    <span class="input-group-text border border-primary bg-primary text-white">
-      <i class="fas fa-search"></i>
-    </span>
+<div class="listing-toolbar">
+  <label class="listing-search mb-0">
+    <span class="sr-only">Search conferences</span>
+    <i class="fas fa-search"></i>
+    <input id="events-search" type="search" placeholder="Search by congress or topic..." autocomplete="off">
+  </label>
+
+  <div class="listing-chips" role="group" aria-label="Filter by type">
+    <button type="button" class="listing-chip" data-filter="" aria-pressed="true">
+      All <span class="listing-chip__count">{{ site.posts | size }}</span>
+    </button>
+    {%- for tag in tags %}
+    {%- assign tag_count = 0 -%}
+    {%- for t in all_tags -%}{%- if t == tag -%}{%- assign tag_count = tag_count | plus: 1 -%}{%- endif -%}{%- endfor %}
+    <button type="button" class="listing-chip" data-filter="{{ tag | slugify }}" aria-pressed="false">
+      {{ tag }} <span class="listing-chip__count">{{ tag_count }}</span>
+    </button>
+    {%- endfor %}
   </div>
-  <button class="btn btn-outline-primary ml-1" onclick="location.href = '{{ '/events/tags' | relative_url }}';">
-    <i class="fas fa-tags"></i>
-  </button>
-</div>
-<ul class="px-3" id="results-container"></ul>
 
-<script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
+  <p class="listing-summary" id="events-summary" aria-live="polite"></p>
+</div>
+
 <script>
-  var sjs = SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        searchResultTemplate: '<a href="{url}" class="list-group-item list-group-item-action">{title}</a>',
-        noResultsText: '<li class="list-group-item list-group-item-action disabled">No results found</li>',
-        json: '{{ '/search.json' | relative_url }}'
-      })
+  document.addEventListener('DOMContentLoaded', function () {
+    var input   = document.getElementById('events-search');
+    var summary = document.getElementById('events-summary');
+    var empty   = document.getElementById('events-empty');
+    var chips   = document.querySelectorAll('.listing-chip');
+    var cards   = document.querySelectorAll('.event-card');
+    var groups  = document.querySelectorAll('.listing-year');
+    var filter  = '';
+
+    function apply() {
+      var query = input.value.trim().toLowerCase();
+      var shown = 0;
+
+      cards.forEach(function (card) {
+        var matchTag  = !filter || (' ' + card.dataset.tags + ' ').indexOf(' ' + filter + ' ') > -1;
+        var matchText = !query || card.dataset.search.indexOf(query) > -1;
+        card.hidden = !(matchTag && matchText);
+        if (!card.hidden) shown++;
+      });
+
+      groups.forEach(function (group) {
+        var visible = group.querySelectorAll('.event-card:not([hidden])').length;
+        group.hidden = visible === 0;
+        group.querySelector('.listing-year__count').textContent = visible;
+      });
+
+      empty.hidden = shown > 0;
+      summary.textContent = 'Showing ' + shown + ' of ' + cards.length + ' contributions';
+
+      // Let wow.js reveal cards that moved into view
+      window.dispatchEvent(new Event('scroll'));
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        filter = chip.dataset.filter;
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip); });
+        apply();
+      });
+    });
+
+    input.addEventListener('input', apply);
+    apply();
+  });
 </script>

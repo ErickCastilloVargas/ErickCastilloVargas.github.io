@@ -50,3 +50,8 @@ orcid:
   url   : https://orcid.org/
   icon  : fab fa-orcid
   color : fca326
+
+research_gate:
+  url   : https://www.researchgate.net/profile/
+  icon  : fab fa-researchgate
+  color : 00ccbb

@@ -1,0 +1,62 @@
+name: Build CV PDF
+
+# Regenerates assets/files/cv.pdf whenever the CV source in cv/ changes.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "cv/**"
+      - ".github/workflows/cv.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: cv-pdf
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pandoc and fonts
+        run: |
+          echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends pandoc fonts-liberation
+
+      # Times New Roman, as in the original CV. If the download fails,
+      # the CSS falls back to Liberation Serif, which has identical metrics.
+      - name: Install Microsoft core fonts
+        continue-on-error: true
+        run: sudo apt-get install -y ttf-mscorefonts-installer && fc-cache -f
+
+      - name: Install WeasyPrint
+        run: pipx install weasyprint==70.0
+
+      - name: Build PDF
+        run: cv/build.sh
+
+      - name: Commit updated PDF
+        run: |
+          if git diff --quiet -- assets/files/cv.pdf; then
+            echo "CV PDF unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/files/cv.pdf
+          git commit -m "Update CV PDF from cv/cv.md"
+          git pull --rebase
+          git push
+
+      # Pushes made with GITHUB_TOKEN may not start a Pages build on their own.
+      - name: Request GitHub Pages build
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"

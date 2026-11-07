@@ -1,16 +1,29 @@
-.project.card {
-  border-radius: $rounded-borders;
-  text-decoration: none !important;
-  margin: 10px auto;
+// Projects page
 
-  .card-img-top {
-    border-radius: $rounded-borders $rounded-borders 0 0;
+.project-card {
+  &__media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+    padding: 1rem;
+    border-bottom: 1px solid var(--l-border);
+    background: var(--l-surface-alt);
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
   }
 
-  transition: transform 400ms;
+  &:hover &__media img {
+    transform: scale(1.03);
+  }
 
-  &:hover:not(.post) {
-    transform: translateY(-8px);
-    box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+  .listing-card__cta .fa-github {
+    margin: 0 0.2rem 0 0;
+    font-size: 0.9rem;
   }
 }

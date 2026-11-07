@@ -1,0 +1,137 @@
+/* CV print styles — mirrors the original Word layout (A4, Times New Roman 12pt). */
+
+@page {
+  size: A4;
+  margin: 56pt 30.2pt 72pt 30.4pt;
+
+  @top-right {
+    content: element(running-header);
+    vertical-align: bottom;
+    padding-bottom: 8pt;
+  }
+
+  @bottom-right {
+    content: counter(page);
+    vertical-align: top;
+    padding-top: 10pt;
+    font-family: "Times New Roman", "Liberation Serif", "TeX Gyre Termes", serif;
+    font-size: 11pt;
+  }
+}
+
+@page :first {
+  @top-right { content: none; }
+}
+
+.running-header {
+  position: running(running-header);
+  font-family: "Times New Roman", "Liberation Serif", "TeX Gyre Termes", serif;
+  font-size: 12pt;
+  text-align: right;
+}
+
+html {
+  font-family: "Times New Roman", "Liberation Serif", "TeX Gyre Termes", serif;
+  font-size: 12pt;
+  line-height: 14.9pt;
+  color: #000;
+}
+
+body {
+  margin: 0;
+  text-align: justify;
+  hyphens: manual;
+  /* Word squeezes inter-word spaces in justified text; this reproduces its line breaks */
+  word-spacing: -0.4pt;
+}
+
+a {
+  color: #467886;
+  text-decoration: underline;
+}
+
+/* Name / contact block */
+.header {
+  text-align: center;
+}
+
+.header p {
+  margin: 0;
+}
+
+/* Section titles: centered, bold, uppercase, one blank line above */
+h2 {
+  margin: 14.9pt 0 0;
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  break-after: avoid;
+}
+
+/* Sub-headings (e.g. "Computational") */
+h3 {
+  margin: 14.9pt 0 0;
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: left;
+  break-after: avoid;
+}
+
+h3.underline {
+  text-decoration: underline;
+}
+
+/* Entries are separated by one blank line, except straight after a heading */
+p {
+  margin: 14.9pt 0 0;
+}
+
+h2 + p,
+h2 + h3,
+h2 + ul,
+h3 + p,
+h3 + ul,
+h2 + .hanging,
+h3 + .hanging,
+.header p {
+  margin-top: 0;
+}
+
+/* Right-aligned text on the same line (dates, places) */
+.right {
+  float: right;
+}
+
+/* Bullet lists: bullet at 18pt, text at 36pt from the margin */
+ul {
+  margin: 0;
+  padding: 0 0 0 36pt;
+  list-style: none;
+}
+
+li {
+  position: relative;
+  margin-top: 0.9pt;
+}
+
+li::before {
+  content: "•";
+  position: absolute;
+  left: -18pt;
+  top: -1pt;
+  font-family: "Times New Roman", "Liberation Serif", "TeX Gyre Termes", serif;
+  font-size: 15pt;
+  line-height: 14.9pt;
+}
+
+li p {
+  margin: 0;
+}
+
+/* Hanging-indent lists without blank lines (awards, communications…) */
+.hanging p {
+  margin: 0;
+  padding-left: 35.4pt;
+  text-indent: -35.4pt;
+}

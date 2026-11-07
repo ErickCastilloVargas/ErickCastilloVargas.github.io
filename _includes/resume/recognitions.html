@@ -1,0 +1,12 @@
+<div class="resume-list">
+  {%- for item in include.source %}
+  <article class="resume-card resume-list__item">
+    <span class="resume-list__icon"><i class="{{ include.icon }}"></i></span>
+    <div>
+      <span class="resume-date">{{ item.date }}</span>
+      <h3 class="resume-card__title">{{ item.title }}</h3>
+      <p class="resume-list__text">{{ item.description }}</p>
+    </div>
+  </article>
+  {%- endfor %}
+</div>

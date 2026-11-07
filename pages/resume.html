@@ -1,0 +1,142 @@
+---
+layout: default
+title: Resume
+permalink: /resume/
+weight: 4
+---
+
+<div class="resume">
+
+  <!-- Profile header -->
+  <header class="resume-hero">
+    <img class="resume-hero__photo" src="{{ site.author.image | relative_url }}" alt="{{ site.author.name }}">
+    <div class="resume-hero__body">
+      <p class="resume-eyebrow">Curriculum Vitae</p>
+      <h1 class="resume-hero__name">{{ site.author.name }}</h1>
+      <p class="resume-hero__role">FPU Predoctoral Fellow in Genetics &middot; Bioinformatics &amp; Omics Data Analysis</p>
+      <p class="resume-hero__meta"><i class="fas fa-map-marker-alt"></i> Universidad de La Laguna, Spain</p>
+
+      <div class="resume-hero__actions">
+        <a class="resume-btn resume-btn--primary" href="{{ '/assets/files/cv.pdf' | relative_url }}" download>
+          <i class="fas fa-download"></i> Download CV
+        </a>
+        <a class="resume-btn" href="mailto:{{ site.author.email }}">
+          <i class="fas fa-envelope"></i> Contact
+        </a>
+        <div class="resume-social">
+          {%- if site.author.github %}
+          <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          {%- endif %}
+          {%- if site.author.linkedin %}
+          <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          {%- endif %}
+          {%- if site.author.orcid %}
+          <a href="https://orcid.org/{{ site.author.orcid }}" target="_blank" rel="noopener" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+          {%- endif %}
+          {%- if site.author.research_gate %}
+          <a href="https://www.researchgate.net/profile/{{ site.author.research_gate }}" target="_blank" rel="noopener" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+          {%- endif %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Highlights -->
+  <section class="resume-stats" aria-label="Highlights">
+    <a class="resume-stat" href="{{ '/publications/' | relative_url }}">
+      <span class="resume-stat__value">{{ site.publications | size }}</span>
+      <span class="resume-stat__label">Publications</span>
+    </a>
+    <a class="resume-stat" href="{{ '/events/' | relative_url }}">
+      <span class="resume-stat__value">{{ site.posts | size }}</span>
+      <span class="resume-stat__label">Conference contributions</span>
+    </a>
+    <a class="resume-stat" href="#awards">
+      <span class="resume-stat__value">{{ site.data.awards | size }}</span>
+      <span class="resume-stat__label">Awards</span>
+    </a>
+    <a class="resume-stat" href="#fellowships">
+      <span class="resume-stat__value">{{ site.data.fellowships_scholarships | size }}</span>
+      <span class="resume-stat__label">Fellowships &amp; scholarships</span>
+    </a>
+  </section>
+
+  <div class="row">
+
+    <!-- Main column -->
+    <div class="col-lg-8 order-lg-2">
+
+      <section class="resume-section" id="about">
+        <h2 class="resume-section__title"><i class="fas fa-user"></i> About me</h2>
+        <p class="resume-lead">
+          I am a predoctoral fellow in genetics, specializing in the computational analysis of genomic, epigenomic, and microbiome data. I hold a Master’s degree in Bioinformatics and Biostatistics, as well as a Master’s degree in Neuroscience, which together have provided me with a strong foundation in both advanced experimental techniques and quantitative data analysis.
+        </p>
+        <p>
+          I have experience in RNA-seq and microarray data analysis, as well as in processing raw respiratory microbiome data and performing microbiome epigenome-wide association studies to investigate links between the respiratory microbiome and the blood or nasal epigenomes. I am a fast learner with a proven ability to adapt to new research areas and methodologies. My perseverance and attention to detail have enabled me to succeed in diverse scientific projects, and I am particularly interested in applying my expertise in omics data analysis to innovative research addressing complex biological challenges.
+        </p>
+      </section>
+
+      <section class="resume-section" id="experience">
+        <h2 class="resume-section__title"><i class="fas fa-flask"></i> Research experience</h2>
+        {% include resume/timeline.html source=site.data.research_experience %}
+      </section>
+
+      <section class="resume-section" id="education">
+        <h2 class="resume-section__title"><i class="fas fa-graduation-cap"></i> Education</h2>
+        <div class="resume-edu">
+          {%- for item in site.data.education %}
+          <article class="resume-card resume-edu__item">
+            <span class="resume-date">{{ item.from }} — {{ item.to | capitalize }}</span>
+            <h3 class="resume-card__title">{{ item.title }}</h3>
+            <p class="resume-card__org">{{ item.university }}</p>
+            {%- if item.grade contains "/" %}
+            <span class="resume-badge"><i class="fas fa-star"></i> {{ item.grade }}</span>
+            {%- else %}
+            <span class="resume-badge resume-badge--muted">{{ item.grade }}</span>
+            {%- endif %}
+          </article>
+          {%- endfor %}
+        </div>
+      </section>
+
+      <section class="resume-section" id="projects">
+        <h2 class="resume-section__title"><i class="fas fa-microscope"></i> Academic projects</h2>
+        {% include resume/timeline.html source=site.data.academic_projects %}
+      </section>
+
+      <section class="resume-section" id="fellowships">
+        <h2 class="resume-section__title"><i class="fas fa-hand-holding-usd"></i> Fellowships &amp; scholarships</h2>
+        {% include resume/recognitions.html source=site.data.fellowships_scholarships icon="fas fa-coins" %}
+      </section>
+
+      <section class="resume-section" id="awards">
+        <h2 class="resume-section__title"><i class="fas fa-trophy"></i> Awards</h2>
+        {% include resume/recognitions.html source=site.data.awards icon="fas fa-award" %}
+      </section>
+
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="col-lg-4 order-lg-1">
+      <div class="resume-sidebar">
+
+        <nav class="resume-card resume-toc d-none d-lg-block" aria-label="Sections">
+          <p class="resume-sidebar__heading">On this page</p>
+          <a href="#about">About me</a>
+          <a href="#experience">Research experience</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Academic projects</a>
+          <a href="#fellowships">Fellowships &amp; scholarships</a>
+          <a href="#awards">Awards</a>
+        </nav>
+
+        <div class="resume-card" id="skills">
+          {% include resume/skills.html title="Programming" icon="fas fa-code" source=site.data.programming-skills %}
+          {% include resume/skills.html title="Laboratory" icon="fas fa-vial" source=site.data.lab-skills %}
+        </div>
+
+      </div>
+    </aside>
+
+  </div>
+</div>

@@ -1,7 +1,18 @@
-<div class="card-group mt-2">
+{%- assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
 
-  {% for post in site.posts %}
+{% for year in years %}
+<section class="listing-year wow animated fadeIn" data-wow-delay=".1s" aria-labelledby="year-{{ year.name }}">
+  <h2 class="listing-year__title" id="year-{{ year.name }}">{{ year.name }} <span class="listing-year__count">{{ year.items | size }}</span></h2>
+
+  <div class="listing-grid">
+    {%- for post in year.items %}
     {% include events/post-card.html %}
-  {% endfor %}
-  
+    {%- endfor %}
+  </div>
+</section>
+{% endfor %}
+
+<div class="listing-empty" id="events-empty" hidden>
+  <i class="far fa-folder-open"></i>
+  No contributions match your search.
 </div>

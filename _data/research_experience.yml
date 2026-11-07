@@ -1,0 +1,11 @@
+- title: Bioinformatics Research Assistant
+  university: Universidad de La Laguna, Spain
+  from: SEP 2024
+  to: JUL 2025
+  description: Genomic data analysis of asthma patients and controls using RNA-seq and microarray data. Custom pipelines were developed in Bash and R to perform end-to-end data processing, including quality control, normalization, bias correction, and sex-stratified differential gene expression analysis to identify asthma-related traits.
+
+- title: Research Assistant (Intern)
+  university: Instituto de Tecnologías Biomédicas, Spain
+  from: FEB 2023
+  to: APR 2023
+  description: Gained experience in genetic editing using CRISPR/Cas9 in mouse cells and embryos, as well as in the generation and handling of HEK293 cell cultures.

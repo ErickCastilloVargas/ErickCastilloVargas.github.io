@@ -5,4 +5,30 @@ permalink: /publications/
 weight: 1
 ---
 
-{% include publications/index.html %}
+<div class="listing">
+
+  <header class="listing-hero">
+    <div class="listing-hero__body">
+      <p class="listing-eyebrow wow animated fadeInUp" data-wow-delay=".1s">Research output</p>
+      <h1 class="listing-hero__title wow animated fadeInUp" data-wow-delay=".15s">Publications</h1>
+      <p class="listing-hero__desc wow animated fadeInUp" data-wow-delay=".2s">Peer-reviewed articles and preprints on the epigenomics, microbiome and transcriptomics of respiratory disease.</p>
+
+      <div class="listing-hero__actions wow animated fadeInUp" data-wow-delay=".25s">
+        {%- if site.author.orcid %}
+        <a class="listing-btn listing-btn--primary" href="https://orcid.org/{{ site.author.orcid }}" target="_blank" rel="noopener">
+          <i class="fab fa-orcid"></i> ORCID profile
+        </a>
+        {%- endif %}
+        {%- if site.author.research_gate %}
+        <a class="listing-btn" href="https://www.researchgate.net/profile/{{ site.author.research_gate }}" target="_blank" rel="noopener">
+          <i class="fab fa-researchgate"></i> ResearchGate
+        </a>
+        {%- endif %}
+      </div>
+    </div>
+    <span class="listing-hero__icon wow animated zoomIn" data-wow-delay=".2s"><i class="fas fa-book-open"></i></span>
+  </header>
+
+  {% include publications/index.html %}
+
+</div>

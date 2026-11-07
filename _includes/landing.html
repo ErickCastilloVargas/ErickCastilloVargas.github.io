@@ -1,17 +1,140 @@
-<h1 class="sr-only">{{ site.title }}</h1>
+<div class="home">
 
-<div class="row justify-content-center align-items-center p-4">
-  <div class="col-lg-4 col-md-6 text-center mt-4">
-
-    <!-- Fine Circle Responsive Image -->
-    <div id="container" class="my-2">
-      <div id="dummy"></div>
-      <div id="element">
-        <img src="{{ site.author.image }}" alt="{{ site.author.name }}" class="circle-image wow animated zoomIn" data-wow-delay=".1s" />
-      </div>
+  <!-- Hero -->
+  <header class="home-hero">
+    <div class="home-hero__photo wow animated zoomIn" data-wow-delay=".1s">
+      <img src="{{ site.author.image | relative_url }}" alt="{{ site.author.name }}" />
     </div>
 
-    <p class="text-muted wow animated slideInUp" data-wow-delay=".15s">{{ site.description }}</p>
+    <p class="home-eyebrow wow animated fadeInUp" data-wow-delay=".15s">Bioinformatics &middot; Genomics &middot; Epigenomics</p>
+    <h1 class="home-hero__name wow animated fadeInUp" data-wow-delay=".2s">{{ site.author.name }}</h1>
+    <p class="home-hero__role wow animated fadeInUp" data-wow-delay=".25s">FPU Predoctoral Fellow in Genetics</p>
+    <p class="home-hero__desc wow animated fadeInUp" data-wow-delay=".3s">{{ site.description }}</p>
+    <p class="home-hero__meta wow animated fadeInUp" data-wow-delay=".3s"><i class="fas fa-map-marker-alt"></i> Universidad de La Laguna, Spain</p>
 
-  </div>
+    <div class="home-hero__actions wow animated fadeInUp" data-wow-delay=".35s">
+      <a class="home-btn home-btn--primary" href="{{ '/assets/files/cv.pdf' | relative_url }}" download>
+        <i class="fas fa-download"></i> Download CV
+      </a>
+      <a class="home-btn" href="mailto:{{ site.author.email }}">
+        <i class="fas fa-envelope"></i> Get in touch
+      </a>
+    </div>
+
+    <nav class="home-social wow animated fadeInUp" data-wow-delay=".4s" aria-label="Profiles">
+      {%- if site.author.github %}
+      <a class="home-social__link" style="--brand-light: #24292f; --brand-dark: #f0f6fc" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i><span>GitHub</span>
+      </a>
+      {%- endif %}
+      {%- if site.author.linkedin %}
+      <a class="home-social__link" style="--brand-light: #0a66c2; --brand-dark: #4ea1f3" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
+      </a>
+      {%- endif %}
+      {%- if site.author.orcid %}
+      <a class="home-social__link" style="--brand-light: #7aa61e; --brand-dark: #a6ce39" href="https://orcid.org/{{ site.author.orcid }}" target="_blank" rel="noopener">
+        <i class="fab fa-orcid"></i><span>ORCID</span>
+      </a>
+      {%- endif %}
+      {%- if site.author.research_gate %}
+      <a class="home-social__link" style="--brand-light: #00a596; --brand-dark: #00ccbb" href="https://www.researchgate.net/profile/{{ site.author.research_gate }}" target="_blank" rel="noopener">
+        <i class="fab fa-researchgate"></i><span>ResearchGate</span>
+      </a>
+      {%- endif %}
+    </nav>
+  </header>
+
+  <!-- Explore -->
+  <section class="home-section" aria-labelledby="home-explore">
+    <h2 class="home-section__title" id="home-explore">Explore</h2>
+
+    <div class="home-grid">
+      <a class="home-card wow animated fadeInUp" data-wow-delay=".1s" href="{{ '/publications/' | relative_url }}">
+        <span class="home-card__icon"><i class="fas fa-book-open"></i></span>
+        <span class="home-card__body">
+          <span class="home-card__title">Publications <span class="home-card__count">{{ site.publications | size }}</span></span>
+          <span class="home-card__text">Peer-reviewed articles and preprints.</span>
+        </span>
+        <i class="fas fa-arrow-right home-card__arrow"></i>
+      </a>
+
+      <a class="home-card wow animated fadeInUp" data-wow-delay=".15s" href="{{ '/events/' | relative_url }}">
+        <span class="home-card__icon"><i class="fas fa-microphone-alt"></i></span>
+        <span class="home-card__body">
+          <span class="home-card__title">Conferences <span class="home-card__count">{{ site.posts | size }}</span></span>
+          <span class="home-card__text">Posters and talks at international congresses.</span>
+        </span>
+        <i class="fas fa-arrow-right home-card__arrow"></i>
+      </a>
+
+      <a class="home-card wow animated fadeInUp" data-wow-delay=".2s" href="{{ '/projects/' | relative_url }}">
+        <span class="home-card__icon"><i class="fas fa-code-branch"></i></span>
+        <span class="home-card__body">
+          <span class="home-card__title">Projects <span class="home-card__count">{{ site.projects | size }}</span></span>
+          <span class="home-card__text">Pipelines and tools for omics data analysis.</span>
+        </span>
+        <i class="fas fa-arrow-right home-card__arrow"></i>
+      </a>
+
+      <a class="home-card wow animated fadeInUp" data-wow-delay=".25s" href="{{ '/resume/' | relative_url }}">
+        <span class="home-card__icon"><i class="fas fa-id-card"></i></span>
+        <span class="home-card__body">
+          <span class="home-card__title">Resume</span>
+          <span class="home-card__text">Experience, education, skills and awards.</span>
+        </span>
+        <i class="fas fa-arrow-right home-card__arrow"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Latest papers -->
+  {%- if site.publications.size > 0 %}
+  {%- assign latest_papers = site.publications | sort: "date" | reverse %}
+  <section class="home-section" aria-labelledby="home-latest-papers">
+    <div class="home-section__head">
+      <h2 class="home-section__title" id="home-latest-papers">Latest papers</h2>
+      <a class="home-section__more" href="{{ '/publications/' | relative_url }}">View all <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="home-latest">
+      {%- for paper in latest_papers limit: 3 %}
+      <a class="home-latest__item wow animated fadeInUp" data-wow-delay=".{{ forloop.index | plus: 1 }}s" href="{{ paper.external_url | default: paper.url | relative_url }}" {%- if paper.external_url and site.open_new_tab %} target="_blank" rel="noopener"{%- endif %}>
+        <span class="home-latest__meta">
+          <span class="home-latest__date">{{ paper.date | date: "%b %Y" }}</span>
+          {%- for tool in paper.tools limit: 1 %}
+          <span class="home-latest__tag">{{ tool }}</span>
+          {%- endfor %}
+        </span>
+        <span class="home-latest__title">{{ paper.name }}</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
+  <!-- Latest conferences -->
+  {%- if site.posts.size > 0 %}
+  <section class="home-section" aria-labelledby="home-latest">
+    <div class="home-section__head">
+      <h2 class="home-section__title" id="home-latest">Latest conferences</h2>
+      <a class="home-section__more" href="{{ '/events/' | relative_url }}">View all <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="home-latest">
+      {%- for post in site.posts limit: 3 %}
+      <a class="home-latest__item wow animated fadeInUp" data-wow-delay=".{{ forloop.index | plus: 1 }}s" href="{{ post.url | relative_url }}">
+        <span class="home-latest__meta">
+          <span class="home-latest__date">{{ post.date | date: "%b %Y" }}</span>
+          {%- for tag in post.tags limit: 1 %}
+          <span class="home-latest__tag">{{ tag }}</span>
+          {%- endfor %}
+        </span>
+        <span class="home-latest__title">{{ post.title }}</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
 </div>

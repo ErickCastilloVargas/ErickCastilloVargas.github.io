@@ -5,5 +5,55 @@ weight: 2
 permalink: /events/
 ---
 
-{% include events/search.html %}
-{% include events/index.html %}
+{%- assign n_talks  = 0 -%}
+{%- assign n_poster = 0 -%}
+{%- assign n_awards = 0 -%}
+{%- for post in site.posts -%}
+  {%- if post.tags contains 'Oral communication' or post.tags contains 'Flash talk' -%}
+    {%- assign n_talks = n_talks | plus: 1 -%}
+  {%- endif -%}
+  {%- if post.tags contains 'Poster' -%}
+    {%- assign n_poster = n_poster | plus: 1 -%}
+  {%- endif -%}
+  {%- for tag in post.tags -%}
+    {%- assign t = tag | downcase -%}
+    {%- if t contains 'award' or t contains 'choice' -%}
+      {%- assign n_awards = n_awards | plus: 1 -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+<div class="listing">
+
+  <header class="listing-hero">
+    <div class="listing-hero__body">
+      <p class="listing-eyebrow wow animated fadeInUp" data-wow-delay=".1s">Scientific communications</p>
+      <h1 class="listing-hero__title wow animated fadeInUp" data-wow-delay=".15s">Conferences</h1>
+      <p class="listing-hero__desc wow animated fadeInUp" data-wow-delay=".2s">Oral communications, posters and flash talks presented at national and international congresses.</p>
+
+      <div class="listing-stats wow animated fadeInUp" data-wow-delay=".25s">
+        <div class="listing-stat">
+          <span class="listing-stat__value">{{ site.posts | size }}</span>
+          <span class="listing-stat__label">Contributions</span>
+        </div>
+        <div class="listing-stat">
+          <span class="listing-stat__value">{{ n_talks }}</span>
+          <span class="listing-stat__label">Talks</span>
+        </div>
+        <div class="listing-stat">
+          <span class="listing-stat__value">{{ n_poster }}</span>
+          <span class="listing-stat__label">Posters</span>
+        </div>
+        <div class="listing-stat">
+          <span class="listing-stat__value">{{ n_awards }}</span>
+          <span class="listing-stat__label">Awards</span>
+        </div>
+      </div>
+    </div>
+    <span class="listing-hero__icon wow animated zoomIn" data-wow-delay=".2s"><i class="fas fa-microphone-alt"></i></span>
+  </header>
+
+  {% include events/search.html %}
+  {% include events/index.html %}
+
+</div>
