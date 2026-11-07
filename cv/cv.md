@@ -14,10 +14,11 @@ Email: [ecastill@ull.edu.es](mailto:ecastill@ull.edu.es) | Phone: +34 601 038 38
 
 Biology graduate with an Extraordinary Degree Award, holding an MSc in Neuroscience and an MSc in Bioinformatics and Biostatistics, currently pursuing a PhD in Health Sciences. Recognized for academic excellence and active participation in research, teaching, and scientific dissemination.
 
-- Awarded an Erasmus+ scholarship as an undergraduate to conduct an internship at University of Wrocław, Poland.
+- Awarded an Erasmus+ scholarship as an undergraduate to conduct an internship at University of Wrocław, Poland, and an Erasmus+ Traineeship grant and an IMFAHE Excellence Fellowship for a research stay at the University of Groningen, the Netherlands.
 - Awarded a Formación Profesorado Universitario (FPU) fellowship to pursue a PhD in Health Sciences.
-- Participated in three research projects and contributed to ten conference presentations and two poster sessions, serving as first author in seven oral communications (three at international conferences).
-- Received two Best Oral Communication awards at international and national congresses, and a Congress Grant for outstanding abstract contribution.
+- First author of a preprint on the microbiome epigenome-wide association study of asthma exacerbations (medRxiv, 2026).
+- Participated in three research projects and contributed to thirteen oral communications and four poster presentations, serving as first author in nine oral communications (four at international congresses).
+- Received four Best Oral Communication awards at international and national congresses, a Reviewers' Choice distinction at the ASHG Annual Meeting, and two EAACI grants (Congress Grant and Travel Grant) for outstanding abstract contributions.
 - Co-supervising one undergraduate BSc thesis and mentoring first-year students in academic performance and adaptation to university life.
 - Completed specialized courses and masterclasses totaling over 120 hours in professional development, innovation and leadership, scientific career skills, animal experimentation, and information resources for PhD research.
 
@@ -94,6 +95,12 @@ Performed genetic editing on mouse embryos to generate a transgenic mouse line e
 ## Honors and awards
 
 ::: hanging
+**Reviewers' Choice Abstract**. *Epigenome-Wide Association Study of the Upper-Airway Microbiome Involved in Asthma Exacerbations Despite Inhaled Corticosteroid Treatment*. ASHG Annual Meeting, Canada, 2026.
+
+**Best Oral Communication Award**. *The Blood Epigenome is Associated with the Upper-Airway Microbiome Involved in Asthma Exacerbations*. EAACI Symposium on Epithelial Barriers, Microbiome and Planetary Health, Turkey, 2026.
+
+**Travel Grant**. *The Blood Epigenome is Associated with the Upper-Airway Microbiome Involved in Asthma Exacerbations*. EAACI Symposium on Epithelial Barriers, Microbiome and Planetary Health, Turkey, 2026. Awarded based on the scientific quality of the submitted abstract.
+
 **Congress Grant**. *The Upper-Airway Microbiome Involved in Asthma Exacerbations is Associated with Methylation Markers Linked to Immunity and Asthma Comorbidities*. EAACI Annual Congress, Turkey, 2026. Awarded to the best abstracts presented at the congress.
 
 **Best Oral Communication Award**. *Study of the interaction between the epigenome and the microbiome linked to asthma exacerbations in a Spanish pediatric population*. SENP Congress, Spain, 2026.
@@ -108,6 +115,12 @@ Performed genetic editing on mouse embryos to generate a transgenic mouse line e
 :::
 
 ## Fellowships and scholarships
+
+**IMFAHE Excellence Fellowship** [2027]{.right}
+Competitive fellowship to fund an international research stay at the University of Groningen, the Netherlands.
+
+**Erasmus+ Traineeship Scholarship** [2027]{.right}
+European mobility grant to carry out an international research stay at the University of Groningen, the Netherlands.
 
 **FPU Predoctoral Fellowship** [2025–2029]{.right}
 Highly competitive national PhD fellowship funded by the Spanish Ministry of Science, Innovation, and Universities.
@@ -125,16 +138,26 @@ European mobility program used to study at the University of Wrocław, Poland.
 **SIGMA: Effect of Biological Sex on Asthma Susceptibility: Role of the Microbiome and Its Interaction with Genetic Variants (Ref: PIFIISC25/42)**. Researcher, University of La Laguna and University Hospital of the Canary Islands, 2026-2028. Principal Investigators: Paloma Poza-Guedes and Fabián Lorenzo-Díaz.
 :::
 
+## Publications
+
+::: hanging
+**E. Castillo-Vargas**, M. Martin-Almeida, A.K. Bozack, et al. *Epigenome-Wide Association Study of the Upper-Airway Microbiome Involved in Asthma Exacerbations*. medRxiv (preprint), 2026. doi: 10.64898/2026.10.02.26364005.
+:::
+
 ## Conference communications
 
 ### Oral communications {.underline}
 
 ::: hanging
+**E. Castillo-Vargas**, M. Martin-Almeida, A.K. Bozack, et al. *The Blood Epigenome is Associated with the Upper-Airway Microbiome Involved in Asthma Exacerbations*. EAACI Symposium on Epithelial Barriers, Microbiome and Planetary Health, Cappadocia, Turkey, 2026.
+
 **E. Castillo-Vargas**, M. Martin-Almeida, E. Martin-Gonzalez, et al. *Methylation markers related to immunity and asthma comorbidities are associated with the upper airway microbiome linked to asthma exacerbations*. ATS International Conference, Orlando, United States, 2026.
 
 **E. Castillo-Vargas**, M. Martin-Almeida, E. Martin-Gonzalez, et al. *The Upper-Airway Microbiome Involved in Asthma Exacerbations is Associated with Methylation Markers Linked to Immunity and Asthma Comorbidities*. EAACI Annual Congress, Istanbul, Turkey, 2026.
 
 **E. Castillo-Vargas**, M. Martin-Almeida, E. Martin-Gonzalez, et al. *Interactions Between the Host Epigenome and the Upper Airway Microbiome in Asthma Exacerbations*. IMFAHE International Conference, Santa Cruz de Tenerife, Spain, 2026.
+
+E.L. García, **E. Castillo-Vargas**, F. Lorenzo-Díaz, M. Pino-Yanes. *Unraveling sex differences in airway gene expression in asthma*. IMFAHE International Conference, Santa Cruz de Tenerife, Spain, 2026.
 
 O. Sardón-Prado, **E. Castillo-Vargas**, M. Martin-Almeida, et al. *Study of the Interaction Between the Epigenome and the Microbiome Associated with Asthma Exacerbations in Pediatric Populations*. XLVII Meeting of the Spanish Society of Pediatric Pulmonology, Zaragoza, Spain, 2026.
 
@@ -150,31 +173,24 @@ E.L. García, **E. Castillo-Vargas**, M. Pino-Yanes, et al. *Transcriptomic anal
 
 **E. Castillo-Vargas**, M. Martin-Almeida, E. Martin-Gonzalez, et al. *Epigenome-wide association study in blood of the salivary microbiome involved in asthma exacerbations*. ECIC-BiOR Congress, San Cristóbal de La Laguna, Spain, 2025.
 
-**E. Castillo-Vargas,** J.M. Brito Armas, R.A. de Bustillo Alfaro, et al. *Study of the effects of point mutations in the Tardbp gene of mice and their relationship with motor neuron degeneration*. XVII Genetics Conference, San Cristóbal de La Laguna, Spain, 2023.
+**E. Castillo-Vargas**, J.M. Brito Armas, R.A. de Bustillo Alfaro, et al. *Study of the effects of point mutations in the Tardbp gene of mice and their relationship with motor neuron degeneration*. XVII Genetics Conference, San Cristóbal de La Laguna, Spain, 2023.
 :::
 
-### Poster presentation {.underline}
+### Poster presentations {.underline}
 
 ::: hanging
-**E. Castillo-Vargas**, M. Martin-Almeida, E. Martin-Gonzalez, et al. *The leukocyte epigenome is associated with salivary bacteria involved in asthma exacerbation*. ERS congress, Amsterdam, Netherlands, 2025.
+J. Perez-Garcia, **E. Castillo-Vargas**, M. Martin-Almeida, et al. *Epigenome-Wide Association Study of the Upper-Airway Microbiome Involved in Asthma Exacerbations Despite Inhaled Corticosteroid Treatment*. ASHG Annual Meeting, Montréal, Canada, 2026.
 
-J.M. Brito Armas, R.A. de Bustillo Alfaro, **E. Castillo-Vargas**, et al. *Effect of mutations in the C-terminal region of Tardbp in knock-in mice at the phenotypic and molecular level*. ENCALS Meeting, Barcelona, Spain, 2023.
+**E. Castillo-Vargas**, M. Martin-Almeida, E. Martin-Gonzalez, et al. *The upper airway microbiome related to asthma exacerbations is associated with leukocyte methylation markers linked to immunity, inflammation, and asthma comorbidities*. ERS Congress, Barcelona, Spain, 2026.
+
+E. L. García, **E. Castillo-Vargas**, F. Lorenzo-Diaz, et al. *The upper airway microbiome related to asthma exacerbations is associated with leukocyte methylation markers linked to immunity, inflammation, and asthma comorbidities*. ERS Congress, Barcelona, Spain, 2026.
+
+**E. Castillo-Vargas**, M. Martin-Almeida, E. Martin-Gonzalez, et al. *The leukocyte epigenome is associated with salivary bacteria involved in asthma exacerbation*. ERS congress, Amsterdam, Netherlands, 2025.
 :::
 
-## Attendance to conference and courses
+## Courses
 
-### Conferences
-
-- **EAACI ISAF-RHINA congress**, Porto, Portugal, 20–22 November 2025 (25 hours).
-- **IMFAHE International Conference**, Santa Cruz de Tenerife, Spain, 25 May 2026 (7 hours).
-- **NEUMOCAN congress**, Las Palmas de Gran Canaria, Spain, 7-8 November 2025 (15 hours).
-- **XV Symposium on Bioinformatics**, Madrid, Spain, 22-24 October 2025 (18 hours).
-- **ABRE congress**, San Cristóbal de La Laguna, Spain, 21-23 July 2025 (14 hours).
-- **ECIC-BiOR congress**, San Cristóbal de La Laguna, Spain, 4-6 June 2025 (14 hours).
-- **XVII Genetics Conference**, San Cristóbal de La Laguna, Spain, 28 December 2023 (5 hours).
-
-### Courses
-
+- **Agentic Artificial Intelligence for Scientific Research and University Teaching**. Training on agentic AI for scientific research (automated literature search, connectors, expert-review skills, a digital brain, and custom agents) and for university teaching (creating and improving materials, Socratic method, and good practices for studying with AI). MAPFRE Foundation Canary Islands Chair in Technology and Education, Universidad de La Laguna, 2026 (6 hours).
 - **Professional Development**. Expert-led masterclasses and practical exercises focused on developing essential professional skills for career advancement. International Mentoring Foundation for the Advancement of Higher Education, 2026 (30 hours).
 - **Innovation, Entrepreneurship and Leadership**. Expert-led sessions and practical exercises to cultivate the mindset and skills necessary to drive innovation, launch entrepreneurial ventures, and lead with impact. International Mentoring Foundation for the Advancement of Higher Education, 2026 (30 hours).
 - **Career in Science**. Expert-led sessions and practical exercises aimed at developing the skills and confidence of early-career researchers for careers in academia and industry. International Mentoring Foundation for the Advancement of Higher Education, 2026 (30 hours).
